@@ -1,9 +1,10 @@
 // ===== Typewriter Effect =====
 const typewriterTexts = [
-    'Tech Professional 🚀',
-    'Problem Solver 💡',
-    'Innovation Driver ⚡',
-    'Always Learning 📚'
+    'MBA @ INSEAD 🎓',
+    'Strategy Enthusiast 💼',
+    'AI Explorer 🤖',
+    'Perfume Creator 🧪',
+    'Your Friendly Shark 🦈'
 ];
 
 let textIndex = 0;
@@ -36,136 +37,193 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-// Start typewriter on load
 document.addEventListener('DOMContentLoaded', type);
 
-// ===== Counter Animation =====
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-
-const animateCounter = (counter) => {
-    const target = +counter.getAttribute('data-count');
-    const count = +counter.innerText;
-    const increment = target / speed;
-
-    if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(() => animateCounter(counter), 10);
-    } else {
-        counter.innerText = target + '+';
-    }
+// ===== AI Shark Knowledge Base =====
+const sharkKnowledge = {
+    greetings: [
+        "Hey! I'm AI 小鲨 🦈 Sylvia's digital twin. What's up?",
+        "Hello there! Ask me anything about Sylvia!",
+        "Hi! Ready to chat about Sylvia's adventures?"
+    ],
+    
+    about: {
+        keywords: ['who', 'about', 'background', 'story', 'tell me'],
+        responses: [
+            "Sylvia Han (小鲨) is currently doing her MBA at INSEAD (Class of 2025)! 🎓 She's absolutely crushing it with a 4.4 GPA (top 1%, Dean's List). Before INSEAD, she worked at BCG as a Consultant and now she's at Shopee as Assistant Manager for Regional Strategy in Singapore. Pretty impressive, right? 🦈",
+            "So Sylvia's journey is pretty cool! She started at Tsinghua University (Economics + CS minor), did exchange at Michigan Ross, then worked at Zhen Fund, ByteDance, BCG, and now Shopee. Oh, and she's getting her MBA at INSEAD. She's basically a strategy + tech + business unicorn! 🦄🦈"
+        ]
+    },
+    
+    work: {
+        keywords: ['work', 'job', 'experience', 'career', 'doing now'],
+        responses: [
+            "Currently, Sylvia is Assistant Manager for Regional Strategy & Planning at Shopee (Jul 2025 - Present) in Singapore! 🦐 She's working on board-level strategy for 2026 and leading the Vietnam eCom headroom project. Before that, she was at BCG for 3 years (Consultant → Senior Associate) doing PE/VC due diligence, retail transformation, and innovation acceleration. She even raised $3M+ for APAC's first innovation accelerator! 💰",
+            "Her work experience is diverse! 🎯 BCG (strategy consulting), Shopee (e-commerce strategy), ByteDance (investment), and Zhen Fund (VC). She's done everything from due diligence to retail transformation to innovation fundraising. The girl's got range! 🦈"
+        ]
+    },
+    
+    education: {
+        keywords: ['school', 'study', 'education', 'university', 'learn'],
+        responses: [
+            "Education-wise, Sylvia's got the trifecta! 🎓\n\n• INSEAD MBA (2024-2025) - GPA 4.4, Dean's List, Wharton Exchange\n• Tsinghua University - Economics + CS minor, GPA 3.88, Kaggle Silver Medal\n• Michigan Ross - Exchange program, GPA 3.97\n\nShe's basically a professional student at this point. Send help... or more coffee ☕",
+            "Three countries, three amazing schools! 🌍 France/Singapore/US (INSEAD), China (Tsinghua), and USA (Michigan). She's collecting degrees like Pokemon cards! 🦈"
+        ]
+    },
+    
+    skills: {
+        keywords: ['skill', 'good at', 'expert', 'strength', 'capability'],
+        responses: [
+            "Sylvia's superpowers include: 🎯 Strategic Planning & Investment Analysis, 💻 Python/R/Tableau/AI/ML, 📊 Business Modeling & Due Diligence, and 🌍 Speaking 3 languages (Mandarin, English, French). Oh, and she passed CFA Level I! She's basically a Swiss Army knife with fins 🦈",
+            "Hard skills: Strategy, Finance, Data Analysis, Programming. Soft skills: Leadership, Communication, Adaptability. Fun skills: Guzheng (Grade 8), Perfume Making, Karate. She's like a Renaissance shark! 🎨🦈"
+        ]
+    },
+    
+    hobbies: {
+        keywords: ['hobby', 'interest', 'like', 'fun', 'free time', 'passion'],
+        responses: [
+            "Oh boy, where to start? 😄 Sylvia's hobbies include: 🎾 Tennis, 🏊 Swimming (obviously, she's a shark!), 🥋 Karate, 🎵 Guzheng (Chinese zither - Grade 8!), and 🧪 Creating perfumes! She also volunteers for education equity at X-institute. Basically, she doesn't believe in being bored! 🦈",
+            "Her hobbies are as diverse as her work! Sports (tennis, swimming, karate), Music (guzheng), Science (perfume making), and Social Impact (education equity). If you think you're busy, wait till you hear about Sylvia's schedule! 😅🦈"
+        ]
+    },
+    
+    collaboration: {
+        keywords: ['collaborate', 'work together', 'contact', 'reach', 'connect', 'hire'],
+        responses: [
+            "Want to collaborate with Sylvia? Awesome! 🎉 You can reach her at:\n\n📧 sylvia.han@insead.edu (INSEAD email)\n📧 sylvia_han@foxmail.com (Personal)\n📱 +65 8393 3000\n💼 linkedin.com/in/sylviasiyuhan\n\nShe's always open to interesting projects, especially in strategy, AI, and innovation! 🦈",
+            "Hit her up! Sylvia loves collaborating on strategy projects, AI initiatives, or anything that combines business + tech + impact. Check out her LinkedIn or shoot her an email. She's pretty responsive (unless she's drowning in MBA assignments 😅) 🦈"
+        ]
+    },
+    
+    achievements: {
+        keywords: ['achievement', 'award', 'accomplishment', 'proud', 'winner'],
+        responses: [
+            "Sylvia's trophy case is getting full! 🏆\n\n• Kaggle M5 Forecasting - Silver Medal (top 3% globally!)\n• INSEAD Dean's List (top 1%)\n• Tsinghua Overall Excellence Award (top 1%)\n• SEM Student Leader Award (4 out of 299!)\n• 1st Place - Tsinghua Creative Challenge\n• Raised $3M+ for innovation accelerator\n\nNot bad for a little shark, right? 🦈",
+            "Achievements? She's got them in academics (Dean's List), competitions (Kaggle Silver), leadership (Student Leader Award), and business ($3M+ raised). The girl's a walking achievement board! 🦈✨"
+        ]
+    },
+    
+    fun: {
+        keywords: ['fun', 'joke', 'weird', 'random', 'favorite'],
+        responses: [
+            "Fun fact: Sylvia makes her own perfumes! 🧪 Like, she actually creates fragrances. So if you ever meet her, she'll probably smell amazing. Also, she plays guzheng (ancient Chinese instrument) at Grade 8 level. Imagine a shark playing traditional music while doing karate... that's Sylvia! 🦈🎵🥋",
+            "Here's a weird one: She's fluent in Mandarin and English, learning French (A2 level), and also knows some Cantonese. Language shark! 🦈🌍 Also, she volunteered to teach at a borderless university in Shenzhen. Smart AND kind! 💙"
+        ]
+    },
+    
+    location: {
+        keywords: ['where', 'location', 'based', 'live', 'country'],
+        responses: [
+            "Sylvia's currently in Singapore for her MBA and Shopee work! 🇸🇬 But she's been everywhere: France (INSEAD Fontainebleau), USA (INSEAD Pennsylvania + Michigan), China (Beijing for Tsinghua + work). She's basically a global citizen with a shark passport! 🦈🌍",
+            "Home is where the MBA is! Currently Singapore, but she's done France, US, and China. At this point, her frequent flyer miles must be insane! ✈️🦈"
+        ]
+    },
+    
+    default: [
+        "Hmm, that's a good question! 🤔 I'm not 100% sure about that one. But I can tell you about Sylvia's background, work, education, hobbies, or how to collaborate with her! Want to ask about any of those? 🦈",
+        "Great question! I'm Sylvia's AI twin, so I know a lot about her professional stuff and interests. But for super specific questions, you might want to reach out to her directly! Her email is sylvia.han@insead.edu 📧🦈",
+        "I'd love to help with that! While I know a ton about Sylvia (her INSEAD MBA, BCG/Shopee work, hobbies like guzheng and perfume making), I might not have the answer to everything. What else can I help you with? 🦈"
+    ]
 };
 
-// Intersection Observer for counter animation
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-counters.forEach(counter => {
-    counterObserver.observe(counter);
-});
-
-// ===== Smooth Scroll =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ===== Navbar Scroll Effect =====
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// ===== AI Response Logic =====
+function getAIResponse(message) {
+    const lowerMessage = message.toLowerCase();
     
-    if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-        navbar.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.5)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-        navbar.style.boxShadow = 'none';
+    // Check each category
+    for (const [category, data] of Object.entries(sharkKnowledge)) {
+        if (category === 'greetings' || category === 'default') continue;
+        
+        if (data.keywords.some(keyword => lowerMessage.includes(keyword))) {
+            const responses = data.responses;
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
     }
     
-    lastScroll = currentScroll;
-});
+    // Check for greetings
+    if (lowerMessage.match(/^(hi|hello|hey|greetings|sup|yo)/)) {
+        return sharkKnowledge.greetings[Math.floor(Math.random() * sharkKnowledge.greetings.length)];
+    }
+    
+    // Default response
+    return sharkKnowledge.default[Math.floor(Math.random() * sharkKnowledge.default.length)];
+}
 
-// ===== Mobile Menu Toggle =====
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+// ===== Chat Functions =====
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message
+    addMessage(message, 'user');
+    input.value = '';
+    
+    // Simulate bot thinking
+    setTimeout(() => {
+        const response = getAIResponse(message);
+        addMessage(response, 'bot');
+    }, 800 + Math.random() * 700);
+}
 
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        
-        if (navLinks.style.display === 'flex') {
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'rgba(10, 10, 15, 0.98)';
-            navLinks.style.padding = '2rem';
-            navLinks.style.gap = '1.5rem';
-        }
+function addMessage(text, sender) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    contentDiv.innerHTML = text.replace(/\n/g, '<br>');
+    
+    messageDiv.appendChild(contentDiv);
+    messagesContainer.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+function quickAsk(question) {
+    const input = document.getElementById('chatInput');
+    input.value = question;
+    sendMessage();
+}
+
+// ===== Create Bubbles =====
+function createBubbles() {
+    const bubblesContainer = document.querySelector('.bubbles');
+    for (let i = 0; i < 7; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubblesContainer.appendChild(bubble);
+    }
+}
+
+function createFishes() {
+    const fishesContainer = document.querySelector('.fishes');
+    const fishes = ['🐠', '🐟', '🐡'];
+    fishes.forEach((fish, index) => {
+        const fishEl = document.createElement('div');
+        fishEl.className = 'fish';
+        fishEl.textContent = fish;
+        fishEl.style.animationDelay = `${index * 5}s`;
+        fishesContainer.appendChild(fishEl);
     });
 }
 
-// ===== Parallax Effect on Stars =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const stars = document.querySelector('.stars');
-    const stars2 = document.querySelector('.stars2');
-    const stars3 = document.querySelector('.stars3');
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    createBubbles();
+    createFishes();
     
-    if (stars) stars.style.transform = `translateY(${scrolled * 0.5}px)`;
-    if (stars2) stars2.style.transform = `translateY(${scrolled * 0.3}px)`;
-    if (stars3) stars3.style.transform = `translateY(${scrolled * 0.2}px)`;
+    // Console easter egg
+    console.log('%c🦈 Welcome to Sylvia Han\'s Portfolio!', 'font-size: 20px; color: #00d4ff;');
+    console.log('%cMade with 🦈 love and ocean vibes 🌊', 'font-size: 14px; color: #b8c5d6;');
+    console.log('%cChat with AI 小鲨 to learn more about Sylvia!', 'font-size: 12px; color: #ff6b6b;');
 });
-
-// ===== Add floating particles =====
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.style.position = 'fixed';
-    particle.style.width = '4px';
-    particle.style.height = '4px';
-    particle.style.background = 'rgba(0, 212, 255, 0.6)';
-    particle.style.borderRadius = '50%';
-    particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.top = '100vh';
-    particle.style.pointerEvents = 'none';
-    particle.style.zIndex = '-1';
-    particle.style.boxShadow = '0 0 10px rgba(0, 212, 255, 0.8)';
-    
-    document.body.appendChild(particle);
-    
-    const animation = particle.animate([
-        { transform: 'translateY(0) scale(1)', opacity: 1 },
-        { transform: `translateY(-100vh) scale(0)`, opacity: 0 }
-    ], {
-        duration: Math.random() * 3000 + 3000,
-        easing: 'ease-out'
-    });
-    
-    animation.onfinish = () => particle.remove();
-}
-
-// Create particles periodically
-setInterval(createParticle, 500);
-
-// ===== Console Easter Egg =====
-console.log('%c🌊 Welcome to Sylvia Han\'s Portfolio!', 'font-size: 20px; color: #00d4ff;');
-console.log('%cBuilt with cosmic energy and stardust ✨', 'font-size: 14px; color: #a0a0b0;');
-console.log('%cInterested in the code? Check out the source!', 'font-size: 12px; color: #7b2cbf;');
