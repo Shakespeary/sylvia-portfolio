@@ -905,13 +905,13 @@ body {
     font-size: 1.2rem;
 }
 
-/* Hide elements based on language */
+/* Hide elements based on language - use !important to override inline content */
 body.lang-en [data-zh] {
-    display: none;
+    display: none !important;
 }
 
 body.lang-zh [data-en] {
-    display: none;
+    display: none !important;
 }
 
 /* ===== Responsive ===== */

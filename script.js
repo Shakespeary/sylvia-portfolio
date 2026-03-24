@@ -3,32 +3,24 @@ let currentLang = 'en';
 
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
+    
+    // Toggle body class for CSS-based switching
     document.body.classList.remove('lang-en', 'lang-zh');
     document.body.classList.add('lang-' + currentLang);
     
+    // Update button text
     const langText = document.getElementById('langText');
     if (langText) {
         langText.textContent = currentLang === 'en' ? '中文' : 'English';
     }
-    
-    // Update all elements with data attributes
-    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-        if (currentLang === 'zh') {
-            if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') {
-                el.textContent = el.getAttribute('data-zh');
-            } else {
-                el.textContent = el.getAttribute('data-zh');
-            }
-        } else {
-            el.textContent = el.getAttribute('data-en');
-        }
-    });
     
     // Update typewriter for current language
     updateTypewriterTexts();
     
     // Save preference
     localStorage.setItem('preferredLang', currentLang);
+    
+    console.log('Language switched to:', currentLang);
 }
 
 function updateTypewriterTexts() {
@@ -95,14 +87,14 @@ const sharkKnowledge = {
     about: {
         keywords: ['who', 'about', 'background', 'story', 'tell me', 'sylvia'],
         responses: [
-            "So I'm Sylvia Han, but everyone calls me 小鲨 (Little Shark) 🦈 Currently doing my MBA at INSEAD, working at Sea Limited's President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
-            "Hey! I'm Sylvia. Quick version: INSEAD MBA student, work at Sea Limited's President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
+            "So I'm Sylvia Han, but everyone calls me 小鲨 (Little Shark) 🦈 Currently doing my MBA at INSEAD, working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
+            "Hey! I'm Sylvia. Quick version: INSEAD MBA student, work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
         ]
     },
     work: {
-        keywords: ['work', 'job', 'do', 'career', 'company', 'sea', 'president'],
+        keywords: ['work', 'job', 'do', 'career', 'company', 'sea', 'president', '冬海'],
         responses: [
-            "Currently I'm at Sea Limited's President's Office, focusing on AI Strategy & Investment! 🦈 Working on AI-driven initiatives and investment opportunities at the board level. Before this, I spent 3 years at BCG as a Consultant.",
+            "Currently I'm at Sea Limited's (冬海集团) President's Office, focusing on AI Strategy & Investment! 🦈 Working on AI-driven initiatives and investment opportunities at the board level. Before this, I spent 3 years at BCG as a Consultant.",
             "I work at Sea Limited's President's Office - doing AI strategy and investment stuff! 🤖💼 Shaping AI direction for the company and exploring investment opportunities. Previously at BCG doing strategy consulting!"
         ]
     },
