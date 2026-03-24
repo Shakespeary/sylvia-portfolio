@@ -19,6 +19,10 @@ function toggleLanguage() {
     
     // Save preference
     localStorage.setItem('preferredLang', currentLang);
+    
+    // Debug log
+    console.log('Language switched to:', currentLang);
+    console.log('Body class:', document.body.className);
 }
 
 function updateTypewriterTexts() {

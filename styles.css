@@ -914,6 +914,11 @@ body.lang-zh .lang-en {
     display: none !important;
 }
 
+/* Ensure lang spans display properly */
+.lang-en, .lang-zh {
+    display: inline;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .navbar {
