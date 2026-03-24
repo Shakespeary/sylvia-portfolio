@@ -905,12 +905,12 @@ body {
     font-size: 1.2rem;
 }
 
-/* Hide elements based on language - use !important to override inline content */
-body.lang-en [data-zh] {
+/* Hide elements based on language */
+body.lang-en .lang-zh {
     display: none !important;
 }
 
-body.lang-zh [data-en] {
+body.lang-zh .lang-en {
     display: none !important;
 }
 
