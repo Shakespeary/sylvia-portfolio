@@ -89,8 +89,8 @@ const sharkKnowledge = {
     about: {
         keywords: ['who', 'about', 'background', 'story', 'tell me', 'sylvia'],
         responses: [
-            "So I'm Sylvia Han, but in casual platforms, my nickname is 小鲨 (Little Shark) 🦈 I'm an INSEAD MBA graduate (Dean's List!), working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
-            "Hey! I'm Sylvia. Quick version: INSEAD MBA grad (Dean's List 🎓), work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
+            "So I'm Sylvia Han, but in casual platforms, my nickname is 小鲨 (Little Shark) 🦈 I'm an INSEAD MBA graduate (Dean's List, but who's counting? 🎓), working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
+            "Hey! I'm Sylvia. Quick version: INSEAD MBA grad (Dean's List, but who cares? 🎓), work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
         ]
     },
     work: {
@@ -103,7 +103,7 @@ const sharkKnowledge = {
     education: {
         keywords: ['school', 'study', 'education', 'university', 'mba', 'insead'],
         responses: [
-            "I'm an INSEAD MBA graduate (Class of 2025)! 🎓 Made Dean's List with a 4.4 GPA. Before that, Tsinghua University in Beijing for Economics + CS minor, and did an exchange at Michigan Ross.",
+            "I'm an INSEAD MBA graduate (Class of 2025)! 🎓 Made Dean's List with a 4.4 GPA (but who's counting?). Before that, Tsinghua University in Beijing for Economics + CS minor, and did an exchange at Michigan Ross.",
             "Education journey: Tsinghua (Beijing) → Michigan Ross (exchange) → INSEAD MBA Graduate! 🌍 Four countries: Singapore, US, China, France."
         ]
     },
@@ -131,7 +131,7 @@ const sharkKnowledge = {
     achievements: {
         keywords: ['achievement', 'award', 'proud', 'accomplishment'],
         responses: [
-            "Hmm, let me think... Won Silver in Kaggle M5 Forecasting (top 3% globally!), INSEAD MBA Dean's List, raised $3M+ for innovation at BCG, and some student awards at Tsinghua. But honestly? The fun stuff makes me prouder! 🏆",
+            "Hmm, let me think... Won Silver in Kaggle M5 Forecasting (top 3% globally!), INSEAD MBA Dean's List (but who cares? 😄), raised $3M+ for innovation at BCG, and some student awards at Tsinghua. But honestly? The fun stuff makes me prouder! 🏆",
             "Achievements... Kaggle Silver Medal 🏆, INSEAD MBA Dean's List 📚, $3M+ fundraising 💰. But you know what I'm really proud? Balancing all this with hobbies like guzheng and perfume making!"
         ]
     },
