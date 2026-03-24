@@ -89,8 +89,8 @@ const sharkKnowledge = {
     about: {
         keywords: ['who', 'about', 'background', 'story', 'tell me', 'sylvia'],
         responses: [
-            "So I'm Sylvia Han, but in casual platforms, my nickname is 小鲨 (Little Shark) 🦈 I'm an INSEAD MBA graduate (Dean's List, but who's counting? 🎓), working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
-            "Hey! I'm Sylvia. Quick version: INSEAD MBA grad (Dean's List, but who cares? 🎓), work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
+            "So I'm Sylvia Han, but in casual platforms, my nickname is 小鲨 (Little Shark) 🦈 I'm an INSEAD MBA graduate, working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
+            "Hey! I'm Sylvia. Quick version: INSEAD MBA grad, work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
         ]
     },
     work: {
