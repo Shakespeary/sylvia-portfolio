@@ -1,7 +1,56 @@
+// ===== Language Management =====
+let currentLang = 'en';
+
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    document.body.classList.remove('lang-en', 'lang-zh');
+    document.body.classList.add('lang-' + currentLang);
+    
+    const langText = document.getElementById('langText');
+    if (langText) {
+        langText.textContent = currentLang === 'en' ? '中文' : 'English';
+    }
+    
+    // Update all elements with data attributes
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+        if (currentLang === 'zh') {
+            if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') {
+                el.textContent = el.getAttribute('data-zh');
+            } else {
+                el.textContent = el.getAttribute('data-zh');
+            }
+        } else {
+            el.textContent = el.getAttribute('data-en');
+        }
+    });
+    
+    // Update typewriter for current language
+    updateTypewriterTexts();
+    
+    // Save preference
+    localStorage.setItem('preferredLang', currentLang);
+}
+
+function updateTypewriterTexts() {
+    if (currentLang === 'zh') {
+        typewriterTexts[0] = 'INSEAD MBA 🎓';
+        typewriterTexts[1] = 'Sea Limited 总裁办 🦈';
+        typewriterTexts[2] = 'AI 战略与投资 🤖';
+        typewriterTexts[3] = '香水创作者 🧪';
+        typewriterTexts[4] = '你的友好小鲨 🦈';
+    } else {
+        typewriterTexts[0] = 'MBA @ INSEAD 🎓';
+        typewriterTexts[1] = 'AI Strategy @ Sea Limited 🦈';
+        typewriterTexts[2] = 'AI Enthusiast 🤖';
+        typewriterTexts[3] = 'Perfume Creator 🧪';
+        typewriterTexts[4] = 'Your Friendly Shark 🦈';
+    }
+}
+
 // ===== Typewriter Effect =====
 const typewriterTexts = [
     'MBA @ INSEAD 🎓',
-    'Strategy @ Sea Limited 🦐',
+    'AI Strategy @ Sea Limited 🦈',
     'AI Enthusiast 🤖',
     'Perfume Creator 🧪',
     'Your Friendly Shark 🦈'
@@ -46,15 +95,15 @@ const sharkKnowledge = {
     about: {
         keywords: ['who', 'about', 'background', 'story', 'tell me', 'sylvia'],
         responses: [
-            "So I'm Sylvia Han, but everyone calls me 小鲨 (Little Shark) 🦈 Currently doing my MBA at INSEAD, working at Sea Limited (Shopee's parent company) in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
-            "Hey! I'm Sylvia. Quick version: INSEAD MBA student, work at Sea Limited (not the company name, that's just coincidence 😅), previously BCG. Love strategy, AI, and have way too many hobbies!"
+            "So I'm Sylvia Han, but everyone calls me 小鲨 (Little Shark) 🦈 Currently doing my MBA at INSEAD, working at Sea Limited's President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
+            "Hey! I'm Sylvia. Quick version: INSEAD MBA student, work at Sea Limited's President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
         ]
     },
     work: {
-        keywords: ['work', 'job', 'do', 'career', 'company', 'sea'],
+        keywords: ['work', 'job', 'do', 'career', 'company', 'sea', 'president'],
         responses: [
-            "Currently I'm at Sea Limited (Shopee's parent company) as Assistant Manager for Regional Strategy in Singapore! 🦐 Working on board-level strategy and Vietnam eCom projects. Before this, I spent 3 years at BCG as a Consultant.",
-            "I work at Sea Limited - yes, that's the company name, not my nickname! 😄 I'm in Regional Strategy & Planning, shaping 2026 roadmap. Previously at BCG doing PE/VC due diligence and innovation projects!"
+            "Currently I'm at Sea Limited's President's Office, focusing on AI Strategy & Investment! 🦈 Working on AI-driven initiatives and investment opportunities at the board level. Before this, I spent 3 years at BCG as a Consultant.",
+            "I work at Sea Limited's President's Office - doing AI strategy and investment stuff! 🤖💼 Shaping AI direction for the company and exploring investment opportunities. Previously at BCG doing strategy consulting!"
         ]
     },
     education: {
@@ -180,6 +229,12 @@ function createFishes() {
 
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    if (savedLang === 'zh') {
+        toggleLanguage();
+    }
+    
     initTypewriter();
     createBubbles();
     createFishes();
