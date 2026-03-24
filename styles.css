@@ -847,6 +847,16 @@ body {
     box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
 }
 
+/* Text-only contact cards (no link) */
+.contact-card.contact-text {
+    cursor: default;
+}
+
+.contact-card.contact-text:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .contact-icon {
     font-size: 3rem;
 }
