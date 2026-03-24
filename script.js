@@ -27,13 +27,13 @@ function toggleLanguage() {
 
 function updateTypewriterTexts() {
     if (currentLang === 'zh') {
-        typewriterTexts[0] = 'INSEAD MBA 🎓';
-        typewriterTexts[1] = 'Sea Limited 总裁办 🦈';
-        typewriterTexts[2] = 'AI 战略与投资 🤖';
+        typewriterTexts[0] = 'INSEAD MBA 毕业生 🎓';
+        typewriterTexts[1] = '冬海集团 AI 战略与投资 🦈';
+        typewriterTexts[2] = 'AI 爱好者 🤖';
         typewriterTexts[3] = '香水创作者 🧪';
         typewriterTexts[4] = '你的友好小鲨 🦈';
     } else {
-        typewriterTexts[0] = 'MBA @ INSEAD 🎓';
+        typewriterTexts[0] = 'INSEAD MBA Graduate 🎓';
         typewriterTexts[1] = 'AI Strategy @ Sea Limited 🦈';
         typewriterTexts[2] = 'AI Enthusiast 🤖';
         typewriterTexts[3] = 'Perfume Creator 🧪';
@@ -89,8 +89,8 @@ const sharkKnowledge = {
     about: {
         keywords: ['who', 'about', 'background', 'story', 'tell me', 'sylvia'],
         responses: [
-            "So I'm Sylvia Han, but everyone calls me 小鲨 (Little Shark) 🦈 Currently doing my MBA at INSEAD, working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
-            "Hey! I'm Sylvia. Quick version: INSEAD MBA student, work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
+            "So I'm Sylvia Han, but in casual platforms, my nickname is 小鲨 (Little Shark) 🦈 I'm an INSEAD MBA graduate (Dean's List!), working at Sea Limited's (冬海集团) President's Office on AI Strategy & Investment in Singapore. Before that, I was at BCG doing strategy consulting. Love solving complex problems and making things happen!",
+            "Hey! I'm Sylvia. Quick version: INSEAD MBA grad (Dean's List 🎓), work at Sea Limited's (冬海集团) President's Office (AI Strategy & Investment), previously BCG. Love strategy, AI, and have way too many hobbies!"
         ]
     },
     work: {
@@ -103,8 +103,8 @@ const sharkKnowledge = {
     education: {
         keywords: ['school', 'study', 'education', 'university', 'mba', 'insead'],
         responses: [
-            "I'm currently at INSEAD for my MBA (Class of 2025)! 🎓 Got lucky with a 4.4 GPA and made Dean's List. Before that, Tsinghua University in Beijing for Economics + CS minor, and did an exchange at Michigan Ross.",
-            "Education journey: Tsinghua (Beijing) → Michigan Ross (exchange) → Now INSEAD MBA! 🌍 Three countries, three amazing experiences."
+            "I'm an INSEAD MBA graduate (Class of 2025)! 🎓 Made Dean's List with a 4.4 GPA. Before that, Tsinghua University in Beijing for Economics + CS minor, and did an exchange at Michigan Ross.",
+            "Education journey: Tsinghua (Beijing) → Michigan Ross (exchange) → INSEAD MBA Graduate! 🌍 Four countries: Singapore, US, China, France."
         ]
     },
     hobbies: {
@@ -131,15 +131,15 @@ const sharkKnowledge = {
     achievements: {
         keywords: ['achievement', 'award', 'proud', 'accomplishment'],
         responses: [
-            "Hmm, let me think... Won Silver in Kaggle M5 Forecasting (top 3% globally!), got Dean's List at INSEAD, raised $3M+ for innovation at BCG, and some student awards at Tsinghua. But honestly? The fun stuff makes me prouder! 🏆",
-            "Achievements... Kaggle Silver Medal 🏆, INSEAD Dean's List 📚, $3M+ fundraising 💰. But you know what I'm really proud? Balancing all this with hobbies like guzheng and perfume making!"
+            "Hmm, let me think... Won Silver in Kaggle M5 Forecasting (top 3% globally!), INSEAD MBA Dean's List, raised $3M+ for innovation at BCG, and some student awards at Tsinghua. But honestly? The fun stuff makes me prouder! 🏆",
+            "Achievements... Kaggle Silver Medal 🏆, INSEAD MBA Dean's List 📚, $3M+ fundraising 💰. But you know what I'm really proud? Balancing all this with hobbies like guzheng and perfume making!"
         ]
     },
     fun: {
-        keywords: ['fun', 'weird', 'random', 'favorite', 'interesting'],
+        keywords: ['fun', 'weird', 'random', 'favorite', 'interesting', 'tsinghua', 'major'],
         responses: [
             "Fun fact: I make my own perfumes! 🧪 Like, actual fragrances from scratch. Also play guzheng (2000-year-old Chinese instrument). Imagine a shark doing karate while playing ancient music and mixing perfumes... that's me! 🦈",
-            "Here's a weird one: I'm fluent in Mandarin and English, learning French (A2), and know some Cantonese. Language shark! 🦈 Also, I volunteer teaching at a borderless university."
+            "Here's a weird one: At Tsinghua I majored in Economics and minored in CS - seems like I know a lot, but maybe I know nothing, just like a finance bro 😄 Also fluent in Mandarin and English, learning French (A2)!"
         ]
     },
     default: [

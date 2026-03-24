@@ -429,6 +429,16 @@ body {
     z-index: 1;
 }
 
+/* Photo avatar support */
+.shark-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
 @keyframes float-shark {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
